@@ -1,0 +1,8 @@
+alias tradebot="ssh trade-bot"
+alias ghidra="~/Programs/ghidra_10.1.1_PUBLIC/ghidraRun &"
+alias ssh-git="ssh -T github.com"
+alias edit-tmux="nvim ~/.config/tmux/tmux.conf"
+alias stable-diffusion="cd ~/Downloads/gitclones/stable-diffusion-webui && ./webui.sh"
+alias config='/usr/bin/git --git-dir=/home/gustavo/.dotfiles/ --work-tree=/home/gustavo'
+alias nconf='/usr/bin/git --git-dir=/home/gustavo/.config/.nvimgit/ --work-tree=/home/gustavo/.config/nvim'
+alias wget='wget --hsts-file=/home/gustavo/.cache/wget-hsts'
