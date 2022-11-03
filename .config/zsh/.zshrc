@@ -1,8 +1,9 @@
 unsetopt beep
 bindkey -v
-zstyle :compinstall filename '/home/gustavo/.zshrc'
-autoload -Uz compinit
-compinit -d $XDG_CACHE_HOME/zcompdump-$ZSH_VERSION
+zstyle :compinstall filename '.config/zsh/.zshrc'
+autoload -U compinit
+zmodload -i zsh/complist
+compinit -C -d $XDG_CACHE_HOME/zcompdump-$ZSH_VERSION
 
 #Terminal
 export TERM=alacritty

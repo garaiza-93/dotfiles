@@ -4,6 +4,7 @@
 [[ -f $ZDOTDIR/.zshrc ]] && . $ZDOTDIR/.zshrc
 HISTSIZE=1000
 SAVEHIST=1000
+export ZSH_COMPDUMP='$HOME/.cache/zcompdump-$ZSH_VERSION'
 export EDITOR=/usr/bin/nvim
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
