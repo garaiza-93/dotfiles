@@ -1,12 +1,10 @@
 unsetopt beep
 bindkey -v
 zstyle :compinstall filename '.config/zsh/.zshrc'
-zstyle ':completion:*:git:*' script ./git-completion.bash
-autoload -U compinit
-zmodload -i zsh/complist
-compinit -C -d $XDG_CACHE_HOME/zcompdump-$ZSH_VERSION
-
+zstyle ':completion:*:*:git:*' script $XDG_CONFIG_HOME/zsh/git-completion.bash
 fpath=($ZDOTDIR $fpath)
+autoload -U compinit && compinit -C -d $XDG_CACHE_HOME/zcompdump-$ZSH_VERSION
+zmodload -i zsh/complist
 
 #Terminal
 export TERM=alacritty
