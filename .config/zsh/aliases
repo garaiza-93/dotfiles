@@ -1,0 +1,32 @@
+#!/bin/sh
+#list aliases
+alias help="ccat $ZDOTDIR/aliases && if [ -f $ZDOTDIR/local_aliases ]; then ccat $ZDOTDIR/local_aliases; fi"
+#ls
+alias l="ls -lAth --color=auto"
+alias L="ls -lAtrh --color=auto"
+alias lc="ls -lcr --color=auto"
+alias ll="ls -lAh --color=auto"
+alias l.="ls -d .* --color=auto"
+alias lr="ls -R --color=auto"
+#zsh
+alias src="exec zsh"
+alias zrc="nvim $ZDOTDIR/.zshrc"
+alias za="nvim $ZDOTDIR/aliases"
+alias cdz="cd $ZDOTDIR"
+#nvim
+alias cdn="cd $XDG_CONFIG_HOME/nvim"
+#git
+alias ga="git add"
+alias gr="git rm"
+alias gb="git branch"
+alias gc="git commit -m"
+alias gC="git checkout"
+alias gp="git push"
+alias gP="git pull"
+alias gs="git status"
+alias gl="git log"
+alias gll="git log --oneline"
+alias gm="git merge"
+alias gi="git init"
+alias gd="git diff"
+alias gR="git restore"
