@@ -11,10 +11,10 @@ ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 zstyle ':completion:*' menu select
-zstyle ':completion:*:*:git:*' script $ZDOTDIR/completion/git-completion.bash
+zstyle ':completion:*:*:git:*' script $ZDOTDIR/git-completion.bash
 fpath=($ZDOTDIR $fpath)
+autoload -Uz compinit && compinit
 zmodload zsh/complist
-autoload -Uz compinit && compinit -C -d $XDG_CACHE_HOME/zcompdump
 _comp_options+=(globdots)
 
 autoload -Uz colors && colors
