@@ -15,6 +15,10 @@ alias za="nvim $ZDOTDIR/aliases"
 alias cdz="cd $ZDOTDIR"
 #nvim
 alias cdn="cd $XDG_CONFIG_HOME/nvim"
+#tmux
+alias cdt="cd $XDG_CONFIG_HOME/tmux"
+alias trc="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias tsrc="tmux source-file ~/.config/tmux/tmux.conf"
 #git
 alias ga="git add"
 alias gr="git rm"
