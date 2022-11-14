@@ -1,5 +1,10 @@
 #!/bin/sh
 bindkey "^[[3~" delete-char #seriously zsh, when i press Delete, I MEAN DELETE!
+bindkey -r "^H"
+bindkey -r "^J"
+bindkey -r "^K"
+bindkey -r "^L"
+bindkey -r "^Z"
 zle_highlight=("paste:none")
 unsetopt beep
 setopt autocd extendedglob nomatch menucomplete
