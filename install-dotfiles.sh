@@ -73,7 +73,29 @@ make -j
 cp -f tmux $HOME/.local/bin
 cd ..
 
-#3. install zsh
-#4. sudo echo "export ZDOTDIR="$HOME/.config/zsh"" > /etc/zsh/zshenv
+#install zsh?
+case $REPO_ID in #feel free to add more distros to this statement, i"m only including what i use
+  *ubuntu*)
+    INSTALLCMD=$(sudo apt install zsh -y)
+  ;;
+  *arch* | *manjaro*)
+    INSTALLCMD=$(sudo pacman --needed --quiet -S zsh) #sorry, not a hands-off approach. the tradeoff of rolling release distros.
+esac
+$INSTALLCMD
+sudo echo "export ZDOTDIR="$HOME/.config/zsh"" > /etc/zsh/zshenv
 #5. clone repo, but bare. see https://www.atlassian.com/git/tutorials/dotfiles
+git clone --bare https://github.com/garaiza-93/dotfiles.git $HOME/.dotfiles
+function config {
+   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+}
+mkdir -p .config-backup
+config checkout
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+config checkout
+config config status.showUntrackedFiles no
 #6. if all goes well, repo files should go in their right spot!
