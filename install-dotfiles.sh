@@ -13,6 +13,9 @@ case $REPO_ID in #feel free to add more distros to this statement, i"m only incl
   *arch* | *manjaro*)
     UPDATECMD=$(sudo pacman -Sy)
     INSTALLCMD=$(sudo pacman --needed --quiet -S openssl) #sorry, not a hands-off approach. the tradeoff of rolling release distros.
+  *nix*)
+    UPDATECMD=$(sudo nix-env -u)
+    INSTALLCMD=$(sudo nix-env -iA nixos.openssl)
   ;;
   #and so on...
 esac
@@ -39,9 +42,9 @@ wget -q https://github.com/libevent/libevent/releases/download/release-$LIBEVENT
 tar xvzf libevent-$LIBEVENT-stable.tar.gz
 cd libevent-$LIBEVENT-stable
 echo 'in libevent dir'
-#./configure --prefix=$HOME/.local --disable-shared
-#make -j
-#make install
+./configure --prefix=$HOME/.local --disable-shared
+make -j
+make install
 cd ..
 
 echo "Installing ncurses version $LIBEVENT"
@@ -49,9 +52,9 @@ wget -q https://invisible-mirror.net/archives/ncurses/ncurses-$NCURSES.tar.gz
 tar xvzf ncurses-$NCURSES.tar.gz
 cd ncurses*/
 echo 'in ncurses dir'
-#./configure --prefix=$HOME/.local
-#make -j 
-#make install 
+./configure --prefix=$HOME/.local
+make -j 
+make install 
 cd ..
 
 #2. install tmux

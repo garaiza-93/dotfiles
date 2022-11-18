@@ -1,0 +1,7 @@
+[user]
+	name = garaiza-93
+	email = araizagustavo93@gmail.com
+[color]
+	ui = true
+[hub]
+	protocol = ssh
