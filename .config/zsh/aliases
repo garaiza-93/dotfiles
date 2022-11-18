@@ -20,6 +20,7 @@ alias cdt="cd $XDG_CONFIG_HOME/tmux"
 alias trc="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias tsrc="tmux source-file ~/.config/tmux/tmux.conf"
 #git
+alias config="/usr/bin/git --git-dir=\${HOME}/.dotfiles/ --work-tree=\${HOME}"
 alias ga="git add"
 alias gr="git rm"
 alias gb="git branch"
